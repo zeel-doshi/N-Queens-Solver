@@ -254,7 +254,7 @@ def store_cells_in_dict(corners):
 
     return cell_dict
 
-def extract_and_classify_cells(image_path, cell_dict, crop_ratio=0.75):
+def extract_and_classify_cells(image_path, cell_dict, crop_ratio=0.70):
     """Extracts inner regions of each cell, classifies them based on dominant color, and visualizes bounding boxes."""
     image = cv2.imread(image_path)
     if image is None:
