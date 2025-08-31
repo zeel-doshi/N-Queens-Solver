@@ -1,44 +1,51 @@
-## N-Queens Solver with Color Constraint
+# N-Queens Solver with Color Constraint
 
-**Contributers**
+**Contributers:**
 1. [Zeel Doshi](https://github.com/zeel-doshi)
 2. [Jatin Pahuja](https://github.com/StrivingMind)
 
-**Overview**
+### Overview:
+
 This project is a Streamlit web application that solves the N-Queens puzzle with an added twist: color constraints. Users can upload an image of a colored N×N grid, and the application will find a valid solution where each queen is placed in a different colored region, adhering to the classic N-Queens rules.
 
-**How It Works**
+### How It Works:
+
 The application employs computer vision techniques to process the uploaded grid image and a backtracking algorithm to solve the constrained N-Queens problem. It offers two distinct approaches for image processing:
 
-**Approach 1:** Canny Edge Detection, Shi-Tomasi Corner Detection, and K-Means Clustering
+**Approach 1:** 
 
-Grid Detection: This approach uses the Canny edge detector to find the outlines of the grid.
+**Canny Edge Detection, Shi-Tomasi Corner Detection, and K-Means Clustering**
 
-Corner Detection: The Shi-Tomasi corner detection algorithm is then used to precisely locate the corners of the cells in the grid.
+**Grid Detection:** This approach uses the Canny edge detector to find the outlines of the grid.
 
-Cell Classification: Each cell's color is classified using K-Means clustering to determine the dominant color and assign it to a specific region.
+**Corner Detection:** The Shi-Tomasi corner detection algorithm is then used to precisely locate the corners of the cells in the grid.
 
-**Approach 2:** Harris Corner Detection, Sobel Edge Detection, and Gaussian Mixture Models (GMM)
+**Cell Classification:** Each cell's color is classified using K-Means clustering to determine the dominant color and assign it to a specific region.
 
-Grid Detection: This method utilizes the Sobel operator for edge detection.
 
-Corner Detection: Harris corner detection is employed to identify the corners of the grid cells.
+**Approach 2:**
 
-Cell Classification: A Gaussian Mixture Model (GMM) is used to classify the colors of the cells, which can be more robust for complex color variations.
+**Harris Corner Detection, Sobel Edge Detection, and Gaussian Mixture Models (GMM)**
 
-**Constraint Satisfaction Problem (CSP) Solver**
+**Grid Detection:** This method utilizes the Sobel operator for edge detection.
+
+**Corner Detection:** Harris corner detection is employed to identify the corners of the grid cells.
+
+**Cell Classification:** A Gaussian Mixture Model (GMM) is used to classify the colors of the cells, which can be more robust for complex color variations.
+
+### Constraint Satisfaction Problem (CSP) Solver
 
 Once the grid and its color regions are identified, a backtracking algorithm solves the N-Queens problem. The core constraints are:
 
-No two queens can be in the same row or column.
+1. No two queens can be in the same row or column.
 
-No two queens can be on the adjacent diagonal cells.
+2. No two queens can be on the adjacent diagonal cells.
 
-Color Constraint: Each queen must be placed in a unique color region.
+3. Color Constraint: Each queen must be placed in a unique color region.
 
 The solver uses the Minimum Remaining Values (MRV) heuristic to prioritize placing queens in regions with the fewest available cells, which helps to prune the search space and find a solution more efficiently.
 
-**Environment Setup**
+### Environment Setup
 
 1. Clone the repository:
    ```bash
@@ -53,7 +60,7 @@ The solver uses the Minimum Remaining Values (MRV) heuristic to prioritize placi
     ```bash
    streamlit run main.py
 
-**How to Use web App**
+### How to Use web App
 
 1. Open the Streamlit application in your web browser.
 
@@ -66,10 +73,10 @@ The solver uses the Minimum Remaining Values (MRV) heuristic to prioritize placi
 5. You can download the resulting image.
 
 
-**Streamlit app:**
+### Streamlit app:
 https://n-queens-solver.streamlit.app/
 
-**Use grids from:**
+### Use grids from:
 https://www.queens-game.com/
 
 
