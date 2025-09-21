@@ -3,8 +3,8 @@
 **Contributers:**
 1. [Zeel Doshi](https://github.com/zeel-doshi)
 2. [Jatin Pahuja](https://github.com/StrivingMind)
-3. [Meenal Joshi]
-4. [Sidharth]
+3. Meenal Joshi
+4. Sidharth
 
 ### Overview:
 
